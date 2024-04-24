@@ -16,9 +16,16 @@ class HashTable:
     def get(self,key):
        h=self.get_hash(key)
        return self.arr[h]
+    def delete(self, key):
+       h=self.get_hash(key)
+       self.arr[h]=None
        
 
 
 t=HashTable()
 t.add('march 6',130)
-t.get('march 6')
+t.add('march 1', 400)
+t.add('march 3', 3434)
+print(t.get('march 6'))
+t.delete('march 6')
+print(t.get('march 6'))
